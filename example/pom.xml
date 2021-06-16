@@ -9,7 +9,14 @@
         <relativePath/>
         <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.lrhealth.bcos</groupId>
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://www.jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <groupId>org.fisco.bcos</groupId>
     <artifactId>blockchain-logger</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>blockchain-logger</name>
@@ -40,9 +47,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.cnhealth.devcenter</groupId>
-            <artifactId>fisco-client-starter</artifactId>
-            <version>0.1.0</version>
+            <groupId>com.github.dalaocu</groupId>
+            <artifactId>fisco-bcos-spring-boot-starter</artifactId>
+            <version>dev-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -71,26 +78,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>1.4.13</version>
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>push</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <repository>docker-private.cnhealth.com/lr-apps/${project.artifactId}</repository>
-                    <buildArgs>
-                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-                    </buildArgs>
-                </configuration>
             </plugin>
         </plugins>
     </build>
