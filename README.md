@@ -113,3 +113,6 @@ public class BCOSLoggerService extends AbstractContractService {
 - 进入example，启动项目 ` ./mvnw spring-boot:run`
 - 访问 `http://localhost:8080`, 点击swagger的链接，测试接口。
 
+## 特別感謝
+本项目由社区贡献者supermqB贡献。
+
