@@ -1,22 +1,47 @@
 # fisco-bcos-spring-boot-starter
 
 这是一个 fisco bcos 的java sdk starter，方便项目中使用sdk。
-目前还没有deploy到maven central仓库。 所以可以采取拉取源码本地install的方式，或者deploy自己的私有仓库，来使用。
-
-## 本地安装使用
-- 拉取本项目，在项目目录下执行 `./mvnw clean install`
+目前可使用JitPack的方式来引入。
 
 ## 在自己的项目配置使用sdk及编写相应的contract服务。
 
+### Maven方式引入
+- 在要使用的项目pom.xml中添加依赖仓库如下
+```xml
+    <repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://www.jitpack.io</url>
+		</repository>
+	</repositories>
+```
 - 在要使用的项目pom.xml中添加依赖如下
 ```xml
-<dependency>
-    <groupId>com.cnhealth.devcenter</groupId>
-    <artifactId>fisco-client-starter</artifactId>
-    <version>0.1.0</version>
-</dependency>
+  <dependency>
+	    <groupId>com.github.FISCO-BCOS</groupId>
+	    <artifactId>fisco-bcos-spring-boot-starter</artifactId>
+	    <version>dev-SNAPSHOT</version>
+	</dependency>
 ```
 
+### 或者通过Gradle方式引入
+- 在要使用的项目build.gradle文件中添加依赖仓库如下
+```Groovy
+    allprojects {
+		repositories {
+			...
+			maven { url 'https://www.jitpack.io' }
+		}
+	}
+```
+- 在要使用的项目build.gradle中添加依赖如下
+```Groovy
+	dependencies {
+	        implementation 'com.github.FISCO-BCOS:fisco-bcos-spring-boot-starter:dev-SNAPSHOT'
+	}
+```
+
+###  配置文件
 - 添加properties配置，以application.properties中的配置为例
 
   *注意，把密钥目录(~/fisco/nodes/127.0.0.1/sdk)复制到bcos.cryptoMaterial.certPath定义的目录下*
@@ -32,9 +57,9 @@ bcos.network.peers[1]=127.0.0.1:20201
 
 # if user account is created, please config it here
 bcos.account.keyStoreDir=account
-bcos.account.accountFilePath=conf/0x3b525049e83aac4ee30cf662a47b64223d6edc4d.pem
+bcos.account.accountFilePath=conf/0x22fec9d7e121960e7972402789868962238d8037.pem
 bcos.account.accountFileFormat=pem
-bcos.account.accountAddress=0x3b525049e83aac4ee30cf662a47b64223d6edc4d
+bcos.account.accountAddress=0x22fec9d7e121960e7972402789868962238d8037
 
 bcos.threadPool.channelProcessorThreadSize=16
 bcos.threadPool.receiptProcessorThreadSize=16
