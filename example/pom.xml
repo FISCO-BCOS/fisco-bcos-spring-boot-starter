@@ -47,10 +47,10 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.dalaocu</groupId>
-            <artifactId>fisco-bcos-spring-boot-starter</artifactId>
-            <version>dev-SNAPSHOT</version>
-        </dependency>
+	        <groupId>com.github.FISCO-BCOS</groupId>
+	        <artifactId>fisco-bcos-spring-boot-starter</artifactId>
+	        <version>dev-SNAPSHOT</version>
+	    </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
