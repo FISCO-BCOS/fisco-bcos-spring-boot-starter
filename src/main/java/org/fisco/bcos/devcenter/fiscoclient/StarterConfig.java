@@ -1,4 +1,4 @@
-package com.cnhealth.devcenter.fiscoclient;
+package org.fisco.bcos.devcenter.fiscoclient;
 
 import org.fisco.bcos.sdk.BcosSDK;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties(BcosProperties.class)
-@ComponentScan(basePackages = {"com.cnhealth.devcenter.fiscoclient"})
+@ComponentScan(basePackages = {"org.fisco.bcos.devcenter.fiscoclient"})
 @ConditionalOnProperty(prefix = "bcos", value = "hasInstance", matchIfMissing = false)
 public class StarterConfig {
     @Autowired
