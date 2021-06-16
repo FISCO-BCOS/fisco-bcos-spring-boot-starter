@@ -8,7 +8,7 @@
 ### Maven方式引入
 - 在要使用的项目pom.xml中添加依赖仓库如下
 ```xml
-    <repositories>
+        <repositories>
 		<repository>
 		    <id>jitpack.io</id>
 		    <url>https://www.jitpack.io</url>
@@ -17,7 +17,7 @@
 ```
 - 在要使用的项目pom.xml中添加依赖如下
 ```xml
-  <dependency>
+        <dependency>
 	    <groupId>com.github.FISCO-BCOS</groupId>
 	    <artifactId>fisco-bcos-spring-boot-starter</artifactId>
 	    <version>dev-SNAPSHOT</version>
@@ -27,7 +27,7 @@
 ### 或者通过Gradle方式引入
 - 在要使用的项目build.gradle文件中添加依赖仓库如下
 ```Groovy
-    allprojects {
+        allprojects {
 		repositories {
 			...
 			maven { url 'https://www.jitpack.io' }
@@ -111,5 +111,5 @@ public class BCOSLoggerService extends AbstractContractService {
 - 将keys（一般位于~/fisco/nodes/127.0.0.1/sdk）拷贝到 example/src/main/resources/conf 目录下
 - 准备好spring-boot-starter, 如果本地使用，在项目目录下执行 `./mvnw clean install`
 - 进入example，启动项目 ` ./mvnw spring-boot:run`
-- 访问 `http://localhost:8080/swagger-ui.html`, 点击swagger的链接，测试接口。
+- 访问 `http://localhost:8080`, 点击swagger的链接，测试接口。
 
